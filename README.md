@@ -21,14 +21,14 @@
 
 ## Resultados clave
 
-| Métrica | Valor |
+| Metrica | Valor |
 |---------|-------|
 | Documentos en MongoDB | 50,454 |
 | Sucursales mapeadas (CDMX) | 20 |
 | Endpoints REST | 20+ |
 | Dias de pronostico (Prophet) | 60 |
 | Dataset original (Kaggle, 2015) | 48,620 ordenes |
-| Charts y visualizaciones | 15+ |
+| Graficas y visualizaciones | 15+ |
 
 ---
 
@@ -36,40 +36,40 @@
 
 | Ruta | Descripcion |
 |------|-------------|
-| `DBNOSQL_Proyecto/app/(dashboard)/` | Paginas del dashboard y componentes de charts |
+| `DBNOSQL_Proyecto/app/(dashboard)/` | Paginas del dashboard y componentes de graficas |
 | `DBNOSQL_Proyecto/app/api/` | 20+ endpoints REST con validacion Zod |
-| `DBNOSQL_Proyecto/lib/` | Conexion MongoDB (singleton + indices) y rate limiter |
+| `DBNOSQL_Proyecto/lib/` | Conexion MongoDB (singleton + indices) y limitador de solicitudes |
 | `DBNOSQL_Proyecto/theme/` | Tema Material UI personalizado |
-| `DBNOSQL_Proyecto/public/` | Assets estaticos (logos) |
+| `DBNOSQL_Proyecto/public/` | Recursos estaticos (logos) |
 | `ETL/` | Pipeline Python: enriquecimiento, limpieza y carga |
 
 ---
 
 ## Documentacion
 
-- [Setup y configuracion](#setup)
-- [Pipeline ETL — orden de ejecucion](#4-run-the-etl-pipeline-required-before-first-launch)
-- [API Overview — todos los endpoints](#api-overview)
-- [Modelo de datos MongoDB](#data-model)
+- [Instalacion y configuracion](#instalacion)
+- [Pipeline ETL — orden de ejecucion](#4-ejecutar-el-pipeline-etl-requerido-antes-del-primer-inicio)
+- [Endpoints API — lista completa](#endpoints-api)
+- [Modelo de datos MongoDB](#modelo-de-datos)
 
 ---
 
-## Features
+## Funcionalidades
 
-- **KPI cards** — ingreso anual, promedio diario, unidades vendidas, precio promedio
+- **Tarjetas KPI** — ingreso anual, promedio diario, unidades vendidas, precio promedio
 - **Series de tiempo** — ventas por hora, dia de la semana, trimestre
-- **Heatmap semanal** — revenue por hora x dia de la semana (Plotly)
-- **Matriz de evaluacion** — clasificacion estrategica 4 cuadrantes (Estrella / Mantener / Promocionar / Descontinuar)
-- **Analisis de lealtad** — preferencia de pizza: clientes leales vs. general
-- **Market basket recommender** — co-ocurrencia de ingredientes estilo Apriori
+- **Mapa de calor semanal** — ingresos por hora x dia de la semana (Plotly)
+- **Matriz de evaluacion** — clasificacion estrategica en 4 cuadrantes (Estrella / Mantener / Promocionar / Descontinuar)
+- **Analisis de lealtad** — preferencia de pizza: clientes leales vs. publico general
+- **Recomendador de ingredientes** — co-ocurrencia de ingredientes tipo Apriori
 - **Pronostico 60 dias** — modelo Prophet almacenado en MongoDB
-- **Mapa de sucursales** — Leaflet con 20 ubicaciones en CDMX y stats por sucursal
+- **Mapa de sucursales** — Leaflet con 20 ubicaciones en CDMX y estadisticas por sucursal
 - **Tabla de ordenes** — DataGrid paginado con filtros y ordenamiento
-- **CRUD de empleados** — panel en memoria con Toolpad Core
+- **Gestion de empleados** — panel CRUD en memoria con Toolpad Core
 
 ---
 
-## Setup
+## Instalacion
 
 ### 1. Clonar el repositorio
 
@@ -92,16 +92,16 @@ cp .env.example .env.local
 
 | Variable | Descripcion |
 |----------|-------------|
-| `MONGODB_URI` | Connection string de MongoDB Atlas |
-| `AUTH_SECRET` | Secret aleatorio — generar con `npx auth secret` |
-| `AUTH_USERS` | Array JSON de `{ email, password (bcrypt hash), name }` |
+| `MONGODB_URI` | Cadena de conexion de MongoDB Atlas |
+| `AUTH_SECRET` | Clave aleatoria — generar con `npx auth secret` |
+| `AUTH_USERS` | Arreglo JSON de `{ email, password (hash bcrypt), name }` |
 
 Para generar un hash bcrypt:
 ```bash
 node -e "const b=require('bcryptjs'); b.hash('tupassword',10).then(console.log)"
 ```
 
-### 4. Run the ETL pipeline (required before first launch)
+### 4. Ejecutar el pipeline ETL (requerido antes del primer inicio)
 
 El dashboard requiere datos en MongoDB. Ejecutar los cuatro notebooks en orden desde la carpeta `ETL/`:
 
@@ -111,8 +111,8 @@ pip install pandas numpy prophet pymongo openpyxl jupyter
 jupyter notebook
 ```
 
-| Notebook | Que hace |
-|----------|----------|
+| Notebook | Descripcion |
+|----------|-------------|
 | `1_Unir_bases.ipynb` | Enriquece el CSV de Kaggle con geolocalizacion sintetica, IDs de cliente y pesos de ingredientes |
 | `2_Simular_datos_sucios.ipynb` | Inyecta ruido controlado (duplicados, NaN) para simular datos reales sucios |
 | `3_Limpia_datos.ipynb` | Limpia el dataset y carga ~50,000 documentos en `pizzaDB.menu` |
@@ -133,7 +133,7 @@ Abrir [http://localhost:3000](http://localhost:3000) e iniciar sesion con las cr
 
 ---
 
-## API Overview
+## Endpoints API
 
 Todos los endpoints requieren sesion activa. Las respuestas usan codigos HTTP estandar.
 
@@ -142,20 +142,20 @@ Todos los endpoints requieren sesion activa. Las respuestas usan codigos HTTP es
 | `GET /api/kpis` | Ingreso anual, promedio diario, unidades vendidas, precio promedio |
 | `GET /api/ventas-hora` | Ventas por hora (filtros: `startDate`, `endDate`, `mall`) |
 | `GET /api/ventas-dia` | Promedio de ventas por dia de la semana |
-| `GET /api/temporadas` | Revenue trimestral |
+| `GET /api/temporadas` | Ingresos trimestrales |
 | `GET /api/top-pizzas` | Top 10 pizzas por volumen |
 | `GET /api/evaluacion-pizzas` | Matriz estrategica para todas las pizzas |
 | `GET /api/top-leales` | Ratio de lealtad: clientes leales vs. todos |
 | `GET /api/ingredientes/list` | Catalogo completo de ingredientes |
-| `GET /api/ingredientes/recomendaciones?ingrediente=<name>` | Top-5 combinaciones de ingredientes (market basket) |
+| `GET /api/ingredientes/recomendaciones?ingrediente=<nombre>` | Top 5 combinaciones de ingredientes (market basket) |
 | `GET /api/ingredientes-top` | Top 10 ingredientes por gramos semanales |
-| `GET /api/ingredientes-funnel` | Ingredientes por contribucion total a revenue |
-| `GET /api/prep-times` | Datos de tiempo de preparacion por tamano de pizza |
+| `GET /api/ingredientes-funnel` | Ingredientes por contribucion total a ingresos |
+| `GET /api/prep-times` | Tiempos de preparacion por tamano de pizza |
 | `GET /api/histograma-prep` | Datos para histograma de tiempo de preparacion |
 | `GET /api/preparacion-por-categoria` | Mediana de tiempo de preparacion por categoria |
 | `GET /api/top-ingredientes-preparacion` | Ingredientes ordenados por tiempo de preparacion asociado |
 | `GET /api/branches` | Ubicaciones de sucursales (lat/lon) |
-| `GET /api/branches/stats?mall=<name>` | Revenue, ordenes y pizza mas vendida por sucursal |
+| `GET /api/branches/stats?mall=<nombre>` | Ingresos, ordenes y pizza mas vendida por sucursal |
 | `GET /api/orders` | Ultimas 500 ordenes |
 | `GET /api/pizzas` | Catalogo de pizzas (id, tamano, categoria, ingredientes) |
 | `GET /api/sales/forecast` | Pronostico de 60 dias (Prophet) |
@@ -163,7 +163,7 @@ Todos los endpoints requieren sesion activa. Las respuestas usan codigos HTTP es
 
 ---
 
-## Data Model
+## Modelo de datos
 
 La coleccion principal (`pizzaDB.menu`) almacena un documento por linea de orden:
 
@@ -203,13 +203,22 @@ Indices creados automaticamente al iniciar:
 
 ---
 
-## Autor
+## Autores
 
 <p align="center">
   <a href="https://github.com/AlegreVentura">
     <img src="https://github-readme-stats.vercel.app/api?username=AlegreVentura&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true" height="150"/>
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlegreVentura&layout=compact&theme=tokyonight&hide_border=true" height="150"/>
   </a>
+</p>
+
+<p align="center">
+  <strong>Roberto Jhoshua Alegre Ventura</strong> — desarrollo principal, arquitectura, ETL y deployment<br/>
+  <a href="https://github.com/AlegreVentura">@AlegreVentura</a>
+</p>
+
+<p align="center">
+  <sub>Con contribuciones de: Emil Sanchez · Bruno Fonseca · Melisa Arano · Israel Jimenez</sub>
 </p>
 
 <p align="center">
