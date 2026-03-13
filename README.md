@@ -56,16 +56,18 @@
 
 ## Funcionalidades
 
-- **Tarjetas KPI** — ingreso anual, promedio diario, unidades vendidas, precio promedio
-- **Series de tiempo** — ventas por hora, dia de la semana, trimestre
-- **Mapa de calor semanal** — ingresos por hora x dia de la semana (Plotly)
-- **Matriz de evaluacion** — clasificacion estrategica en 4 cuadrantes (Estrella / Mantener / Promocionar / Descontinuar)
-- **Analisis de lealtad** — preferencia de pizza: clientes leales vs. publico general
-- **Recomendador de ingredientes** — co-ocurrencia de ingredientes tipo Apriori
-- **Pronostico 60 dias** — modelo Prophet almacenado en MongoDB
-- **Mapa de sucursales** — Leaflet con 20 ubicaciones en CDMX y estadisticas por sucursal
-- **Tabla de ordenes** — DataGrid paginado con filtros y ordenamiento
-- **Gestion de empleados** — panel CRUD en memoria con Toolpad Core
+| | |
+|---|---|
+| **Tarjetas KPI** | Ingreso anual, promedio diario, unidades vendidas y precio promedio en tiempo real |
+| **Series de tiempo** | Ventas por hora, dia de la semana y trimestre con filtros por sucursal y fecha |
+| **Mapa de calor semanal** | Ingresos por hora x dia de la semana — visualizacion interactiva con Plotly |
+| **Matriz de evaluacion** | Clasificacion estrategica en 4 cuadrantes: Estrella / Mantener / Promocionar / Descontinuar |
+| **Analisis de lealtad** | Comparativa de preferencia de pizza entre clientes leales y publico general |
+| **Recomendador de ingredientes** | Co-ocurrencia de ingredientes tipo Apriori — top 5 combinaciones por ingrediente |
+| **Pronostico 60 dias** | Modelo Prophet entrenado sobre datos historicos, almacenado y servido desde MongoDB |
+| **Mapa de sucursales** | Leaflet con 20 ubicaciones en CDMX, estadisticas de ingresos y pizza top por sucursal |
+| **Tabla de ordenes** | DataGrid paginado con filtros multiples y ordenamiento por columna |
+| **Gestion de empleados** | Panel CRUD en memoria con Toolpad Core |
 
 ---
 
@@ -207,13 +209,12 @@ Indices creados automaticamente al iniciar:
 
 <p align="center">
   <a href="https://github.com/AlegreVentura">
-    <img src="https://github-readme-stats.vercel.app/api?username=AlegreVentura&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true" height="150"/>
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlegreVentura&layout=compact&theme=tokyonight&hide_border=true" height="150"/>
   </a>
 </p>
 
 <p align="center">
-  <strong>Roberto Jhoshua Alegre Ventura</strong> — desarrollo principal, arquitectura, ETL y deployment<br/>
+  <strong>Roberto Jhoshua Alegre Ventura</strong> — Autor principal<br/>
   <a href="https://github.com/AlegreVentura">@AlegreVentura</a>
 </p>
 
