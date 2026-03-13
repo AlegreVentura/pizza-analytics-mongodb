@@ -1,0 +1,39 @@
+# ─── Documentos internos ────────────────────────────────────────────────────
+ANALISIS_PROYECTO.md
+
+# ─── Next.js ────────────────────────────────────────────────────────────────
+.next/
+out/
+
+# ─── Node.js ────────────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Variables de entorno (credenciales) ────────────────────────────────────
+.env
+.env.local
+.env*.local
+*.env*
+
+# ─── ETL — archivos de datos generados (reproducibles con los notebooks) ────
+ETL/*.csv
+ETL/*.json
+ETL/*.xlsx
+
+# ─── Build output ────────────────────────────────────────────────────────────
+/bin/
+/build/
+/dist/
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+
+# ─── SO ──────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Logs y temporales ───────────────────────────────────────────────────────
+*.log
+*.tmp
+*.swp
+*.bak
