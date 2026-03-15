@@ -1,38 +1,44 @@
-# ─── Documentos internos ────────────────────────────────────────────────────
+# Documentos internos
 ANALISIS_PROYECTO.md
 
-# ─── Next.js ────────────────────────────────────────────────────────────────
+# Next.js
 .next/
 out/
 
-# ─── Node.js ────────────────────────────────────────────────────────────────
+# Node.js
 node_modules/
 
-# ─── Variables de entorno (credenciales) ────────────────────────────────────
+# Variables de entorno
 .env
 .env.local
 .env*.local
 *.env*
 
-# ─── ETL — archivos de datos generados (reproducibles con los notebooks) ────
+# ETL - archivos de datos generados (reproducibles con los notebooks)
 ETL/*.csv
 ETL/*.json
 ETL/*.xlsx
 
-# ─── Build output ────────────────────────────────────────────────────────────
+# Build output
 /bin/
 /build/
 /dist/
 
-# ─── IDE ─────────────────────────────────────────────────────────────────────
+# IDE
 .idea/
 .vscode/
 
-# ─── SO ──────────────────────────────────────────────────────────────────────
+# Sistema operativo
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# ─── Logs y temporales ───────────────────────────────────────────────────────
+# Videos
+*.mp4
+*.mov
+*.avi
+
+# Logs y temporales
 *.log
 *.tmp
 *.swp

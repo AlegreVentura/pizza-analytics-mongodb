@@ -86,8 +86,8 @@ export default function DayChart() {
           },
           tooltip: {
             shared: true,
-            formatter: function () {
-              const idx = this.points?.[0]?.point.index ?? 0;
+            formatter: function (this: Highcharts.TooltipFormatterContextObject): string {
+              const idx = (this as any).points?.[0]?.point.index ?? 0;
               const venta = ventas[idx].toFixed(2);
               const cantidad = pizzas[idx];
               return `<b>${this.x}</b><br/>💵 Ventas: $${venta}<br/>🍕 Pizzas: ${cantidad}`;

@@ -23,9 +23,10 @@ const providers: Provider[] = [
       const user = users.find((u) => u.email === credentials.email);
       if (!user) return null;
 
+      const hash = user.passwordHash.replace(/\\\$/g, '$');
       const passwordOk = await bcrypt.compare(
         credentials.password as string,
-        user.passwordHash
+        hash
       );
       if (!passwordOk) return null;
 

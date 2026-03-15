@@ -8,6 +8,7 @@ export default auth((req) => {
   // Rutas de autenticación y recursos estáticos: siempre pasan
   if (
     pathname.startsWith('/api/auth') ||
+    pathname.startsWith('/auth') ||
     pathname.startsWith('/public') ||
     pathname.startsWith('/_next')
   ) {
