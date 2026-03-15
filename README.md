@@ -25,7 +25,13 @@ https://github.com/user-attachments/assets/c8ad49da-96a9-40c9-80c8-17be7a592298
 
 ---
 
-## Resultados clave
+## Impacto
+
+Logre construir un sistema de analytics end-to-end para una cadena de pizzerias en CDMX, segun el procesamiento de 50,454 ordenes que revelaron patrones de consumo, productos de bajo rendimiento y combinaciones frecuentes de ingredientes, realizando un pipeline ETL en Python sobre el dataset Pizza Place Sales (Kaggle, 2015) enriquecido con geolocalizacion sintetica de 20 sucursales, cargando los datos en MongoDB Atlas y sirviendo 20+ endpoints REST con Next.js 15.
+
+---
+
+## Caracteristicas principales
 
 <div align="center">
 
