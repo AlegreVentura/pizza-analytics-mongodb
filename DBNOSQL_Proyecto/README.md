@@ -1,10 +1,10 @@
-# DBNOSQL_Proyecto — Aplicacion Web
+# DBNOSQL_Proyecto — Aplicación Web
 
-Dashboard de analytics construido con Next.js 15 y MongoDB Atlas. Expone 20+ endpoints REST que alimentan graficas interactivas, un mapa de sucursales, pronostico de ventas y un recomendador de ingredientes.
+Dashboard de analytics construido con Next.js 15 y MongoDB Atlas. Expone 20+ endpoints REST que alimentan gráficas interactivas, un mapa de sucursales, pronóstico de ventas y un recomendador de ingredientes.
 
 ---
 
-## Instalacion
+## Instalación
 
 ### 1. Instalar dependencias
 
@@ -19,7 +19,7 @@ npm install
 cp .env.example .env.local
 ```
 
-| Variable | Descripcion |
+| Variable | Descripción |
 |----------|-------------|
 | `MONGODB_URI` | Connection string de MongoDB Atlas (ver `.env.example`) |
 | `AUTH_SECRET` | Secret para firmar sesiones — generar con `npx auth secret` |
@@ -38,43 +38,43 @@ node -e "const b=require('bcryptjs'); b.hash('tupassword',10).then(console.log)"
 npm run dev
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000) e iniciar sesion con las credenciales configuradas en `AUTH_USERS`.
+Abrir [http://localhost:3000](http://localhost:3000) e iniciar sesión con las credenciales configuradas en `AUTH_USERS`.
 
 ---
 
 ## Endpoints API
 
-Todos los endpoints requieren sesion activa. Respuestas con codigos HTTP estandar.
+Todos los endpoints requieren sesión activa. Respuestas con códigos HTTP estándar.
 
-| Endpoint | Descripcion |
+| Endpoint | Descripción |
 |----------|-------------|
 | `GET /api/kpis` | Ingreso anual, promedio diario, unidades vendidas, precio promedio |
 | `GET /api/ventas-hora` | Ventas por hora — filtros: `startDate`, `endDate`, `mall` |
-| `GET /api/ventas-dia` | Promedio de ventas por dia de la semana |
+| `GET /api/ventas-dia` | Promedio de ventas por día de la semana |
 | `GET /api/temporadas` | Revenue trimestral |
 | `GET /api/top-pizzas` | Top 10 pizzas por volumen |
-| `GET /api/evaluacion-pizzas` | Matriz estrategica para todas las pizzas |
+| `GET /api/evaluacion-pizzas` | Matriz estratégica para todas las pizzas |
 | `GET /api/top-leales` | Ratio lealtad: clientes frecuentes vs. todos |
-| `GET /api/ingredientes/list` | Catalogo completo de ingredientes |
+| `GET /api/ingredientes/list` | Catálogo completo de ingredientes |
 | `GET /api/ingredientes/recomendaciones?ingrediente=<name>` | Top 5 combinaciones de ingredientes (market basket) |
 | `GET /api/ingredientes-top` | Top 10 ingredientes por gramos semanales |
-| `GET /api/ingredientes-funnel` | Ingredientes por contribucion total a revenue |
-| `GET /api/prep-times` | Tiempo de preparacion por tamano de pizza |
-| `GET /api/histograma-prep` | Histograma de tiempo de preparacion |
-| `GET /api/preparacion-por-categoria` | Mediana de tiempo de preparacion por categoria |
-| `GET /api/top-ingredientes-preparacion` | Ingredientes ordenados por tiempo de preparacion |
+| `GET /api/ingredientes-funnel` | Ingredientes por contribución total a revenue |
+| `GET /api/prep-times` | Tiempo de preparación por tamaño de pizza |
+| `GET /api/histograma-prep` | Histograma de tiempo de preparación |
+| `GET /api/preparacion-por-categoria` | Mediana de tiempo de preparación por categoría |
+| `GET /api/top-ingredientes-preparacion` | Ingredientes ordenados por tiempo de preparación |
 | `GET /api/branches` | Ubicaciones de sucursales (lat/lon) |
-| `GET /api/branches/stats?mall=<name>` | Revenue, ordenes y pizza top por sucursal |
-| `GET /api/orders` | Ultimas 500 ordenes |
-| `GET /api/pizzas` | Catalogo de pizzas (id, tamano, categoria, ingredientes) |
-| `GET /api/sales/forecast` | Pronostico de 60 dias (Prophet) |
+| `GET /api/branches/stats?mall=<name>` | Revenue, órdenes y pizza top por sucursal |
+| `GET /api/orders` | Últimas 500 órdenes |
+| `GET /api/pizzas` | Catálogo de pizzas (id, tamaño, categoría, ingredientes) |
+| `GET /api/sales/forecast` | Pronóstico de 60 días (Prophet) |
 | `GET /api/data/rawdata` | Datos crudos paginados — params: `limit`, `page` |
 
 ---
 
 ## Modelo de datos
 
-La coleccion principal (`pizzaDB.menu`) almacena un documento por linea de orden:
+La colección principal (`pizzaDB.menu`) almacena un documento por línea de orden:
 
 ```json
 {
@@ -99,9 +99,9 @@ La coleccion principal (`pizzaDB.menu`) almacena un documento por linea de orden
 }
 ```
 
-Indices creados automaticamente al iniciar la aplicacion:
+Índices creados automáticamente al iniciar la aplicación:
 
-| Indice | Tipo |
+| Índice | Tipo |
 |--------|------|
 | `order_date` | Ascendente |
 | `pizza_name` | Ascendente |

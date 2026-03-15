@@ -85,8 +85,8 @@ export default function RecomendadorIngredientes() {
           </Typography>
         </Stack>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5 }}>
-          Basado en analisis de asociacion (market basket), se muestran los trios de ingredientes
-          que mas frecuentemente aparecen juntos en pedidos reales.
+          Basado en análisis de asociación (market basket), se muestran los tríos de ingredientes
+          que más frecuentemente aparecen juntos en pedidos reales.
         </Typography>
         {loading ? (
           <CircularProgress size={28} />

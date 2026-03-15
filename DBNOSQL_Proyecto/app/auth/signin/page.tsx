@@ -156,7 +156,7 @@ export default function SignIn() {
                   '&.Mui-disabled': { opacity: 0.6 },
                 }}
               >
-                {loading ? <CircularProgress size={20} sx={{ color: 'white' }} /> : 'Iniciar sesion'}
+                {loading ? <CircularProgress size={20} sx={{ color: 'white' }} /> : 'Iniciar sesión'}
               </Button>
             </Stack>
           </Box>

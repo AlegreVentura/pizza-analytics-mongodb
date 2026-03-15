@@ -119,10 +119,10 @@ export default function DashboardContent() {
                   {/* ── Sección 1: Preparación ── */}
                   <Box sx={{ mb: 3, mt: 1 }}>
                     <Typography variant="h5" fontWeight={700}>
-                      Analisis de Preparacion
+                      Análisis de Preparación
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                      Tiempos de cocina, distribucion por tamano y rendimiento de ingredientes por operario.
+                      Tiempos de cocina, distribución por tamaño y rendimiento de ingredientes por operario.
                     </Typography>
                   </Box>
                   <Grid container spacing={2}>

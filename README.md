@@ -27,24 +27,24 @@ https://github.com/user-attachments/assets/c8ad49da-96a9-40c9-80c8-17be7a592298
 
 ## Impacto
 
-Centralice el analisis de **50,454 documentos** de una cadena de pizzerias en un unico dashboard interactivo, segun **48,620 ordenes historicas** de 2015 que revelaron patrones de consumo, productos de bajo rendimiento y combinaciones frecuentes de ingredientes.
+Centralicé el análisis de **50,454 documentos** de una cadena de pizzerías en un único dashboard interactivo, según **48,620 órdenes históricas** de 2015 que revelaron patrones de consumo, productos de bajo rendimiento y combinaciones frecuentes de ingredientes
 
-Para ello, construi un pipeline ETL en Python sobre el dataset Pizza Place Sales (Kaggle, 2015) enriquecido con geolocalizacion sintetica de **20 sucursales en CDMX**, con pronostico de demanda a **60 dias** con Prophet, todo almacenado en MongoDB Atlas y servido mediante **20+ endpoints REST** en Next.js 15.
+Para ello, construí un pipeline ETL en Python sobre el dataset Pizza Place Sales (Kaggle, 2015) enriquecido con geolocalización sintética de **20 sucursales en CDMX**, con pronóstico de demanda a **60 días** con Prophet, todo almacenado en MongoDB Atlas y servido mediante **20+ endpoints REST** en Next.js 15.
 
 ---
 
-## Caracteristicas principales
+## Características principales
 
 <div align="center">
 
-| Metrica | Valor |
+| Métrica | Valor |
 |---------|-------|
 | Documentos en MongoDB | **50,454** |
 | Sucursales mapeadas (CDMX) | **20** |
 | Endpoints REST | **20+** |
-| Dias de pronostico (Prophet) | **60** |
-| Dataset original (Kaggle, 2015) | **48,620** ordenes |
-| Graficas y visualizaciones | **15+** |
+| Días de pronóstico (Prophet) | **60** |
+| Dataset original (Kaggle, 2015) | **48,620** órdenes |
+| Gráficas y visualizaciones | **15+** |
 
 </div>
 
@@ -54,16 +54,16 @@ Para ello, construi un pipeline ETL en Python sobre el dataset Pizza Place Sales
 
 ```
 pizza-analytics-mongodb/
-├── DBNOSQL_Proyecto/   ← Aplicacion web Next.js 15 + 20 endpoints REST
+├── DBNOSQL_Proyecto/   ← Aplicación web Next.js 15 + 20 endpoints REST
 └── ETL/                ← Pipeline Python: limpieza, enriquecimiento y carga
 ```
 
 ---
 
-## Documentacion
+## Documentación
 
-- [DBNOSQL_Proyecto/README.md](DBNOSQL_Proyecto/README.md) — Instalacion, variables de entorno, endpoints API y modelo de datos
-- [ETL/README.md](ETL/README.md) — Pipeline ETL, orden de ejecucion de notebooks y fuente de datos
+- [DBNOSQL_Proyecto/README.md](DBNOSQL_Proyecto/README.md) — Instalación, variables de entorno, endpoints API y modelo de datos
+- [ETL/README.md](ETL/README.md) — Pipeline ETL, orden de ejecución de notebooks y fuente de datos
 
 ---
 
@@ -72,15 +72,15 @@ pizza-analytics-mongodb/
 | | |
 |---|---|
 | **Tarjetas KPI** | Ingreso anual, promedio diario, unidades vendidas y precio promedio en tiempo real |
-| **Series de tiempo** | Ventas por hora, dia de la semana y trimestre con filtros por sucursal y fecha |
-| **Mapa de calor semanal** | Ingresos por hora x dia de la semana — visualizacion interactiva con Plotly |
-| **Matriz de evaluacion** | Clasificacion estrategica en 4 cuadrantes: Estrella / Mantener / Promocionar / Descontinuar |
-| **Analisis de lealtad** | Comparativa de preferencia de pizza entre clientes leales y publico general |
+| **Series de tiempo** | Ventas por hora, día de la semana y trimestre con filtros por sucursal y fecha |
+| **Mapa de calor semanal** | Ingresos por hora x día de la semana — visualización interactiva con Plotly |
+| **Matriz de evaluación** | Clasificación estratégica en 4 cuadrantes: Estrella / Mantener / Promocionar / Descontinuar |
+| **Análisis de lealtad** | Comparativa de preferencia de pizza entre clientes leales y público general |
 | **Recomendador de ingredientes** | Co-ocurrencia de ingredientes tipo Apriori — top 5 combinaciones por ingrediente |
-| **Pronostico 60 dias** | Modelo Prophet entrenado sobre datos historicos, almacenado y servido desde MongoDB |
-| **Mapa de sucursales** | Leaflet con 20 ubicaciones en CDMX, estadisticas de ingresos y pizza top por sucursal |
-| **Tabla de ordenes** | DataGrid paginado con filtros multiples y ordenamiento por columna |
-| **Gestion de empleados** | Panel CRUD en memoria con Toolpad Core |
+| **Pronóstico 60 días** | Modelo Prophet entrenado sobre datos históricos, almacenado y servido desde MongoDB |
+| **Mapa de sucursales** | Leaflet con 20 ubicaciones en CDMX, estadísticas de ingresos y pizza top por sucursal |
+| **Tabla de órdenes** | DataGrid paginado con filtros múltiples y ordenamiento por columna |
+| **Gestión de empleados** | Panel CRUD en memoria con Toolpad Core |
 
 ---
 
