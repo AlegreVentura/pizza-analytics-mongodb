@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,30&height=210&section=header&text=Datatouille%20Dashboard&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=40&desc=Bases%20de%20Datos%20No%20SQL%20%7C%20Analytics%20de%20Pizzer%C3%ADas%20con%20MongoDB%20%2B%20Next.js%2015&descAlignY=62&descSize=16" width="100%"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1000&color=A78BFA&center=true&vCenter=true&random=false&width=720&lines=50%2C454+documentos+en+MongoDB+Atlas;20+sucursales+en+CDMX+%C2%B7+48%2C620+%C3%B3rdenes+originales;Pronostico+60+dias+con+Prophet+almacenado+en+MongoDB;Market+basket+%2B+lealtad+%2B+matriz+estrategica)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1000&color=A78BFA&center=true&vCenter=true&random=false&width=720&lines=50%2C454+documentos+en+MongoDB+Atlas;20+sucursales+en+CDMX+%C2%B7+48%2C620+%C3%B3rdenes+originales;Pron%C3%B3stico+60+d%C3%ADas+con+Prophet+almacenado+en+MongoDB;Market+basket+%2B+lealtad+%2B+matriz+estrat%C3%A9gica)](https://git.io/typing-svg)
 
 <br/>
 
@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/c8ad49da-96a9-40c9-80c8-17be7a592298
 
 ## Impacto
 
-Centralicé el análisis de **50,454 documentos** de una cadena de pizzerías en un único dashboard interactivo, según **48,620 órdenes históricas** de 2015 que revelaron patrones de consumo, productos de bajo rendimiento y combinaciones frecuentes de ingredientes
+Centralicé el análisis de **50,454 documentos** de una cadena de pizzerías en un único dashboard interactivo, según **48,620 órdenes históricas** de 2015 que revelaron patrones de consumo, productos de bajo rendimiento y combinaciones frecuentes de ingredientes.
 
 Para ello, construí un pipeline ETL en Python sobre el dataset Pizza Place Sales (Kaggle, 2015) enriquecido con geolocalización sintética de **20 sucursales en CDMX**, con pronóstico de demanda a **60 días** con Prophet, todo almacenado en MongoDB Atlas y servido mediante **20+ endpoints REST** en Next.js 15.
 
